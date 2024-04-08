@@ -63,7 +63,7 @@ class CheckHabitValidator:
         self.field = field
 
     def __call__(self, value):
-        periodicity = dict(value).get(self.field)
+        frequency = dict(value).get(self.field)
 
-        if isinstance(periodicity, int) and (periodicity > 7 or periodicity < 1):
+        if isinstance(frequency, int) and (frequency > 7 or frequency < 1):
             raise ValidationError('Нельзя выполнять привычку реже, чем 1 раз в 7 дней')

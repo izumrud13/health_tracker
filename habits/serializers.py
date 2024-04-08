@@ -5,7 +5,7 @@ from habits.validators import (RelateAndRewardValidator, HabitRelatedHabitIsPlea
                                CheckHabitValidator, HabitTimeDurationValidator)
 
 
-class HabitSerializer(serializers.ModelSerializer):
+class HabitSerializers(serializers.ModelSerializer):
     """ Сериалайзер для модели Habit """
     class Meta:
         model = Habit
@@ -15,5 +15,5 @@ class HabitSerializer(serializers.ModelSerializer):
             HabitRelatedHabitIsPleasantValidator(field1='related_habit', field2='is_pleasant'),
             HabitPleasantValidator(field1='related_habit', field2='reward', field3='is_pleasant'),
             HabitTimeDurationValidator(field='duration'),
-            CheckHabitValidator(field='periodicity')
+            CheckHabitValidator(field='frequency')
         ]

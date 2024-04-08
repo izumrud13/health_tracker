@@ -11,6 +11,7 @@ class HabitsListApiView(generics.ListAPIView):
     """Контролер для вывода списка привычек"""
     serializer_class = HabitSerializers
     permission_classes = [IsAuthenticated, IsOwner]
+    pagination_class = HabitPaginator
 
     def get_queryset(self):
         user = self.request.user
@@ -45,7 +46,7 @@ class HabitsDestroyApiView(generics.DestroyAPIView):
     permission_classes = [IsAuthenticated, IsOwner]
 
 
-class PublicHabitsListApiView(generics.DestroyAPIView):
+class PublicHabitsListApiView(generics.ListAPIView):
     "Контролер для вывода списка публичных привычек"
     serializer_class = HabitSerializers
     queryset = Habit.objects.filter(is_public=True)
