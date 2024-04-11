@@ -42,11 +42,11 @@ class UserUpdateApiView(generics.UpdateAPIView):
     "Контролер для обновления данных пользователя"
     serializer_class = UserSerializers
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated, IsOwner]
+    permission_classes = [IsAuthenticated]
 
 
 class UserRetrieveApiView(generics.RetrieveAPIView):
     "Контроллер для просмотра пользователя"
     serializer_class = UserSerializers
     queryset = User.objects.all()
-    permission_classes = [IsAuthenticated, IsOwner]
+    permission_classes = [IsAuthenticated]
