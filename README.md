@@ -20,7 +20,8 @@
 ####   env\Scripts\activate
 #### 5. Установить зависимости проекта, указанные в файле requirements.txt:
 ####   pip install -r requirements.txt
-#### 6. Создать и запустить контейнеры приложений в Docker с помощью команд: 
+#### 6. Создать файл .env и ввести свои настройки как указано в файле .env.sample
+#### 7. Создать и запустить контейнеры приложений в Docker с помощью команд: 
 ####   docker-compose build
 ####   docker-compose up
 
